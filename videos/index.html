@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Videos by Dr. Ali Murtaza.">
+    <title>Videos - Dr. Ali Murtaza</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <div class="vignette"></div>
+
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="/"><span>Ali</span> Murtaza</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/publications">Publications</a></li>
+            <li><a href="/projects">Projects</a></li>
+            <li><a href="/videos" class="active">Videos</a></li>
+            <li><a href="/lab">SCALAR Labs</a></li>
+            <li><a href="/#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="publications-page-header">
+        <div class="container">
+            <h1>Videos</h1>
+            <p>Lecture videos, invited talks, and research presentations</p>
+        </div>
+    </section>
+
+    <section class="publications-page-content">
+        <div class="container">
+            <div class="video-grid" id="videos-list"></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 SCALAR Labs. All rights reserved by SCALAR Labs.</p>
+        </div>
+    </footer>
+
+    <script src="/data/videos.js"></script>
+    <script>
+        const videosRoot = document.getElementById('videos-list');
+
+        window.videosData.forEach((video) => {
+            videosRoot.insertAdjacentHTML('beforeend', `
+                <article class="video-card">
+                    <div class="video-embed">
+                        <iframe src="${video.embedUrl}" title="${video.title}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-content">
+                        <p class="venue">${video.category}</p>
+                        <h3>${video.title}</h3>
+                        <p>${video.description}</p>
+                    </div>
+                </article>
+            `);
+        });
+    </script>
+</body>
+
+</html>

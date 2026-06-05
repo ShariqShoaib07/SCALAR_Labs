@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SCALAR Labs page for Dr. Ali Murtaza.">
+    <title>SCALAR Labs - Dr. Ali Murtaza</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <div class="vignette"></div>
+
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="/"><span>Ali</span> Murtaza</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/publications">Publications</a></li>
+            <li><a href="/projects">Projects</a></li>
+            <li><a href="/videos">Videos</a></li>
+            <li><a href="/lab" class="active">SCALAR Labs</a></li>
+            <li><a href="/#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="publications-page-header">
+        <div class="container">
+            <h1>SCALAR Labs</h1>
+            <p>Control, planning, safety, and learning for robotic systems in real-world environments</p>
+        </div>
+    </section>
+
+    <section class="lab-section">
+        <div class="container">
+            <h2>Lab Introduction</h2>
+            <p>SCALAR Labs focuses on safety-compliant control, motion planning, and learning for robotics systems with parametric and environment uncertainty. Our work spans single-robot and multi-robot systems, with validation in both simulation and hardware.</p>
+        </div>
+    </section>
+
+    <section class="lab-section">
+        <div class="container">
+            <h2>Research Areas</h2>
+            <div class="tech-chip-row">
+                <span class="tech-chip">Motion Planning</span>
+                <span class="tech-chip">Model Predictive Control</span>
+                <span class="tech-chip">Safety-Critical Control</span>
+                <span class="tech-chip">Multi-Agent Robotics</span>
+                <span class="tech-chip">LLM Task Planning</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="lab-section">
+        <div class="container">
+            <h2>Team Members</h2>
+            <div class="team-grid" id="team-grid"></div>
+        </div>
+    </section>
+
+    <section class="lab-section">
+        <div class="container">
+            <h2>Current Projects</h2>
+            <ul class="simple-list">
+                <li>Semi-parametric control and reinforcement learning for robust bipedal locomotion on uneven terrain.</li>
+                <li>Control and safety mechanisms for multi-arm robotic manipulators in human-robot interaction.</li>
+                <li>LLM-based task planning integrated with motion planning and control architectures.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="lab-section">
+        <div class="container">
+            <h2>Join SCALAR Labs</h2>
+            <p>We welcome inquiries from prospective PhD students, MS students, and visiting researchers. Please include your background, research interests, and representative work when reaching out.</p>
+            <p><a href="mailto:mamurtaza@gatech.edu">Email: mamurtaza@gatech.edu</a></p>
+            <p><a href="https://www.linkedin.com/in/mamurtaza/" target="_blank" rel="noopener noreferrer">LinkedIn: linkedin.com/in/mamurtaza</a></p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 SCALAR Labs. All rights reserved by SCALAR Labs.</p>
+        </div>
+    </footer>
+
+    <script src="/data/lab-members.js"></script>
+    <script>
+        const teamRoot = document.getElementById('team-grid');
+
+        window.labMembersData.forEach((member) => {
+            teamRoot.insertAdjacentHTML('beforeend', `
+                <article class="team-card">
+                    <h3>${member.name}</h3>
+                    <p class="venue">${member.role}</p>
+                    <p>${member.interests}</p>
+                </article>
+            `);
+        });
+    </script>
+</body>
+
+</html>
